@@ -1,0 +1,40 @@
+﻿Build started 05/07/2014 4:33:07 PM.
+     1>Project "C:\Users\Stephi\Documents\Visual Studio 2012\Projects\Pong\Pong\Pong.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\Pong.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Pong.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt GameObject.cpp Pong.cpp PongController.cpp PongModel.cpp PongView.cpp RectFunctions.cpp
+         RectFunctions.cpp
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\rectfunctions.cpp(15): warning C4244: '*=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\rectfunctions.cpp(16): warning C4244: '*=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\rectfunctions.cpp(17): warning C4244: '*=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\rectfunctions.cpp(18): warning C4244: '*=' : conversion from 'float' to 'LONG', possible loss of data
+         PongView.cpp
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\pongview.cpp(25): warning C4244: 'initializing' : conversion from 'double' to 'LONG', possible loss of data
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\pongview.cpp(26): warning C4244: 'initializing' : conversion from 'double' to 'LONG', possible loss of data
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\pongview.cpp(90): warning C4244: 'initializing' : conversion from 'double' to 'LONG', possible loss of data
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\pongview.cpp(91): warning C4244: 'initializing' : conversion from 'double' to 'LONG', possible loss of data
+         PongModel.cpp
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\pongmodel.cpp(24): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\stephi\documents\visual studio 2012\projects\pong\pong\pongmodel.cpp(25): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+         PongController.cpp
+         Pong.cpp
+         GameObject.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\Pong.res" Pong.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Stephi\Documents\Visual Studio 2012\Projects\Pong\Debug\Pong.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Stephi\Documents\Visual Studio 2012\Projects\Pong\Debug\Pong.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Stephi\Documents\Visual Studio 2012\Projects\Pong\Debug\Pong.lib" /MACHINE:X86 Debug\Pong.res
+         Debug\GameObject.obj
+         Debug\Pong.obj
+         Debug\PongController.obj
+         Debug\PongModel.obj
+         Debug\PongView.obj
+         Debug\RectFunctions.obj
+         Debug\stdafx.obj
+         Pong.vcxproj -> C:\Users\Stephi\Documents\Visual Studio 2012\Projects\Pong\Debug\Pong.exe
+     1>Done Building Project "C:\Users\Stephi\Documents\Visual Studio 2012\Projects\Pong\Pong\Pong.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.41
