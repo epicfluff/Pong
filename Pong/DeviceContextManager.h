@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "RectFunctions.h"
 
 class DeviceContextManager
 {
@@ -11,10 +12,19 @@ public:
 	HDC back_hdc;
 	HBITMAP back_bitmap;
 	HBITMAP old_bitmap;
+	RECT windowSize;
+
+	DeviceContextManager(void)
+	{
+		windowSize.right = 0;
+		windowSize.bottom = 0;
+	}
 
 	void setHDC(HDC hdc, HWND h_wnd, PAINTSTRUCT paintstruct)
 	{
-		if(hdc != front_hdc)
+		RECT newWindowSize;
+		GetClientRect(h_wnd, &newWindowSize);
+		if(hdc != front_hdc || newWindowSize.right != windowSize.right || newWindowSize.bottom != windowSize.bottom)
 		{
 			
 			front_hdc = hdc;
@@ -22,6 +32,7 @@ public:
 			ps = paintstruct;
 			deallocBackBuffer();
 			allocBackBuffer();
+			RectFunctions::copy(&newWindowSize, &windowSize);
 		}
 	}
 

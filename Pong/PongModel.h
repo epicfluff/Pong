@@ -38,6 +38,7 @@ public:
 	void setPlayerDirectionNeutral(int player);
 
 	void getObjectPositions(RECT * playerOne, RECT * playerTwo, RECT * ball, int * score1, int * score2);
+	
 };
 
 #endif

@@ -6,6 +6,7 @@ PongController::PongController(void)
 {
 	model = new PongModel();
 	view = new PongView();
+	ai = new PongAI();
 
 }
 
@@ -32,6 +33,15 @@ void PongController::paint()
 void PongController::update(int deltatime)
 {
 	model->update(deltatime);
+
+	RECT playerOne;
+	RECT playerTwo;
+	RECT ball;
+	int score1;
+	int score2;
+
+	model->getObjectPositions(&playerOne, &playerTwo, &ball, &score1, &score2);
+	ai->update(&playerOne, &ball);
 }
 
 void PongController::UpPressed(int player)
@@ -49,4 +59,11 @@ void PongController::UpReleased(int player)
 void PongController::DownReleased(int player)
 {
 	model->setPlayerDirectionNeutral(player);
+}
+
+void PongController::newGame()
+{
+	if(model)
+		delete(model);
+	model = new PongModel();
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include "PongModel.h"
 #include "PongView.h"
+#include "PongAI.h"
 
 class PongController
 {
@@ -8,6 +9,7 @@ class PongController
 private:
 	PongModel * model;
 	PongView * view;
+	PongAI * ai;
 
 
 public:
@@ -21,6 +23,7 @@ public:
 
 	void paint();
 	void update(int deltatime);
+	void newGame();
 
 
 };
