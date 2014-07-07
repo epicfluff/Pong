@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Pong.h" />
     <ClInclude Include="PongAI.h" />
     <ClInclude Include="PongController.h" />
@@ -87,18 +88,24 @@
     <ClInclude Include="PongView.h" />
     <ClInclude Include="RectFunctions.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="DeviceContextManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Pong.cpp" />
     <ClCompile Include="PongAI.cpp" />
     <ClCompile Include="PongController.cpp" />
     <ClCompile Include="PongModel.cpp" />
     <ClCompile Include="PongView.cpp" />
     <ClCompile Include="RectFunctions.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

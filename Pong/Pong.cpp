@@ -5,6 +5,10 @@
 #include "Pong.h"
 #include "PongController.h"
 #include "DeviceContextManager.h"
+#include "SceneManager.h"
+#include "Menu.h"
+#include "SplashScreen.h"
+
 
 #define MAX_LOADSTRING 100
 
@@ -14,6 +18,8 @@ TCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 DeviceContextManager dcManager;
 PongController * pongGame;
+SceneManager * sceneManager;
+
 SYSTEMTIME lastTime;
 
 // Forward declarations of functions included in this code module:
@@ -34,7 +40,14 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	MSG msg;
 	HACCEL hAccelTable;
 
-	pongGame = new PongController();
+	//pongGame = new PongController();
+
+	sceneManager = new SceneManager();
+	Menu * menu = new Menu(sceneManager);
+	SplashScreen * splash = new SplashScreen(sceneManager);
+
+	sceneManager->pushScene(menu);
+	sceneManager->pushScene(splash);
 
 	// Initialize global strings
 	LoadString(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -157,8 +170,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		case IDM_EXIT:
 			DestroyWindow(hWnd);
 			break;
-		case 111:
-			pongGame->newGame();
+		//case 111:
+			//sceneManager->newGame();
 			break;
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);
@@ -169,7 +182,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 		dcManager.setHDC(hdc, hWnd, ps);
 
-		pongGame->paint();
+		sceneManager->paint();
 
 		EndPaint(hWnd, &ps);
 		break;
@@ -177,10 +190,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		switch(wParam)
 		{
 			case VK_UP:
-				pongGame->UpPressed(2);
+				sceneManager->specialKeyPressed("up");
 				break;
 			case VK_DOWN:
-				pongGame->DownPressed(2);
+				sceneManager->specialKeyPressed("down");
 				break;
 		}
 		break;
@@ -188,10 +201,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		switch(wParam)
 		{
 			case VK_UP:
-				pongGame->UpReleased(2);
+				sceneManager->specialKeyReleased("up");
 				break;
 			case VK_DOWN:
-				pongGame->DownReleased(2);
+				sceneManager->specialKeyReleased("down");
 				break;
 		}
 		break;
@@ -205,7 +218,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 						- lastTime.wHour*3600000 - lastTime.wMinute*60000 - lastTime.wSecond*1000 - lastTime.wMilliseconds;
 		if(timeDifference >=5)
 		{
-			pongGame->update(timeDifference);
+			sceneManager->update(timeDifference);
 			InvalidateRect(dcManager.hwnd, NULL, FALSE);
 			lastTime = thisTime;
 		}
