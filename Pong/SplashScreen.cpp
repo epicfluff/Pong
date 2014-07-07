@@ -32,11 +32,11 @@ void SplashScreen::paint()
 
 	RECT clientArea;
 	GetClientRect(dcManager.hwnd, &clientArea);
-
+	RECT textArea = {0, clientArea.bottom /2 - 10, clientArea.right, clientArea.bottom};
 	TCHAR splashText[] = TEXT("Pong!");
 	
 	FillRect(dcManager.back_hdc, &clientArea, (HBRUSH) GetStockObject(BLACK_BRUSH));
-	DrawText(dcManager.back_hdc, splashText, -1, &clientArea, DT_CENTER | DT_VCENTER);
+	DrawText(dcManager.back_hdc, splashText, -1, &textArea, DT_CENTER | DT_VCENTER);
 	BitBlt(dcManager.front_hdc, 0, 0, clientArea.right, clientArea.bottom, dcManager.back_hdc, 0, 0, SRCCOPY);
 }
 void SplashScreen::keyPressed(char key)
