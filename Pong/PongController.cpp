@@ -97,3 +97,11 @@ void PongController::specialKeyReleased(std::string key)
 		DownReleased(2);
 	}
 }
+
+void PongController::menuBarMessage(std::string message)
+{
+	if( message.find("new game") == 0 )
+	{
+		newGame();
+	}
+}

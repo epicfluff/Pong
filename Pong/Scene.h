@@ -10,6 +10,7 @@ public:
 	virtual void specialKeyPressed(std::string key)=0;
 	virtual void keyReleased(char key)=0;
 	virtual void specialKeyReleased(std::string key)=0;
+	virtual void menuBarMessage(std::string message) = 0;
 
 	virtual bool transparentBackground()
 	{

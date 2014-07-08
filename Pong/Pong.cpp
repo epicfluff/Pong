@@ -170,8 +170,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		case IDM_EXIT:
 			DestroyWindow(hWnd);
 			break;
-		//case 111:
-			//sceneManager->newGame();
+		case 111:
+			sceneManager->menuBarMessage("new game");
 			break;
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);

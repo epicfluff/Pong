@@ -62,3 +62,8 @@ void SceneManager::specialKeyReleased(std::string key)
 {
 	sceneStack[sceneStack.size() - 1]->specialKeyReleased(key);
 }
+
+void SceneManager::menuBarMessage(std::string message)
+{
+	sceneStack[sceneStack.size() - 1]->menuBarMessage(message);
+}

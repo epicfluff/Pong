@@ -19,6 +19,7 @@ public:
 	void specialKeyPressed(std::string key);
 	void keyReleased(char key);
 	void specialKeyReleased(std::string key);
+	void menuBarMessage(std::string message) {}
 
 };
 
