@@ -23,5 +23,6 @@ public:
 	void keyReleased(char key);
 	void specialKeyReleased(std::string key);
 	void menuBarMessage(std::string message);
+	void recievedClick(int x, int y);
 };
 

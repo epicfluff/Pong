@@ -11,6 +11,7 @@ public:
 	virtual void keyReleased(char key)=0;
 	virtual void specialKeyReleased(std::string key)=0;
 	virtual void menuBarMessage(std::string message) = 0;
+	virtual void recievedClick(int x, int y) {}
 
 	virtual bool transparentBackground()
 	{

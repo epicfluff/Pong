@@ -208,6 +208,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				break;
 		}
 		break;
+	case WM_LBUTTONDOWN:
+		sceneManager->recievedClick(LOWORD(lParam), HIWORD(lParam));
+		
+		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;

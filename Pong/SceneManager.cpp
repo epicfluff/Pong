@@ -67,3 +67,8 @@ void SceneManager::menuBarMessage(std::string message)
 {
 	sceneStack[sceneStack.size() - 1]->menuBarMessage(message);
 }
+
+void SceneManager::recievedClick(int x, int y)
+{
+	sceneStack[sceneStack.size() - 1]->recievedClick(x, y);
+}
