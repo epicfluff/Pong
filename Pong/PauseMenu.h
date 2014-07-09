@@ -1,17 +1,16 @@
 #pragma once
-#include "scene.h"
+#include "Scene.h"
+#include "DeviceContextManager.h"
 #include "SceneManager.h"
 
-
-class SplashScreen :
+class PauseMenu :
 	public Scene
 {
-	int totalEllapsedTime;
 	SceneManager * sceneManager;
 
 public:
-	SplashScreen(SceneManager * manager);
-	~SplashScreen(void);
+	PauseMenu(SceneManager * manager);
+	~PauseMenu(void);
 
 	void update(int deltaTime);
 	void paint(bool primary);
@@ -19,6 +18,12 @@ public:
 	void specialKeyPressed(std::string key);
 	void keyReleased(char key);
 	void specialKeyReleased(std::string key);
-	void menuBarMessage(std::string message) {}
+	void menuBarMessage(std::string message);
+	void recievedClick(int x, int y);
+
+	bool transparentBackground()
+	{
+		return true;
+	}
 };
 

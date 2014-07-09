@@ -2,12 +2,13 @@
 #include "PongController.h"
 
 
-PongController::PongController(void)
+PongController::PongController(SceneManager * manager)
 {
 	model = new PongModel();
 	view = new PongView();
 	ai = new PongAI();
-
+	sceneManager = manager;
+	pauseScreen = new PauseMenu(manager);
 }
 
 
@@ -17,7 +18,7 @@ PongController::~PongController(void)
 	delete(view);
 }
 
-void PongController::paint()
+void PongController::paint(bool primary)
 {
 	RECT playerOne;
 	RECT playerTwo;
@@ -27,7 +28,7 @@ void PongController::paint()
 
 	model->getObjectPositions(&playerOne, &playerTwo, &ball, &score1, &score2);
 
-	view->paint(&playerOne, &playerTwo, &ball, score1, score2);
+	view->paint(primary, &playerOne, &playerTwo, &ball, score1, score2);
 }
 
 void PongController::update(int deltatime)
@@ -70,7 +71,12 @@ void PongController::newGame()
 
 
 void PongController::keyPressed(char key)
-{}
+{
+	if(key == ' ')
+	{
+		sceneManager->pushScene(pauseScreen);
+	}
+}
 void PongController::specialKeyPressed(std::string key)
 {
 	if(key.find("up") == 0)

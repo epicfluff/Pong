@@ -12,6 +12,6 @@ public:
 	PongView(void);
 	~PongView(void);
 
-	void paint(RECT * playerOne, RECT * playerTwo, RECT * ball, int playerOneScore, int playerTwoScore);
+	void paint(bool primary, RECT * playerOne, RECT * playerTwo, RECT * ball, int playerOneScore, int playerTwoScore);
 };
 

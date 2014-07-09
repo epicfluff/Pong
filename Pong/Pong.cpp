@@ -195,6 +195,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			case VK_DOWN:
 				sceneManager->specialKeyPressed("down");
 				break;
+			case VK_SPACE:
+				sceneManager->keyPressed(' ');
+				break;
 		}
 		break;
 	case WM_KEYUP:
@@ -205,6 +208,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				break;
 			case VK_DOWN:
 				sceneManager->specialKeyReleased("down");
+				break;
+			case VK_SPACE:
+				sceneManager->keyReleased(' ');
 				break;
 		}
 		break;

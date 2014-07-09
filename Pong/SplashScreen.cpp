@@ -23,7 +23,7 @@ void SplashScreen::update(int deltaTime)
 	}
 }
 
-void SplashScreen::paint()
+void SplashScreen::paint(bool primary)
 {
 	extern DeviceContextManager dcManager;
 

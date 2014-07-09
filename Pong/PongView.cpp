@@ -12,7 +12,7 @@ PongView::~PongView(void)
 {
 }
 
-void PongView::paint(RECT * playerOne, RECT * playerTwo, RECT * ball, int playerOneScore, int playerTwoScore)
+void PongView::paint(bool primary, RECT * playerOne, RECT * playerTwo, RECT * ball, int playerOneScore, int playerTwoScore)
 {
 	extern DeviceContextManager dcManager;
 
@@ -29,7 +29,8 @@ void PongView::paint(RECT * playerOne, RECT * playerTwo, RECT * ball, int player
 	paintScoreBoard(&scoreBoardArea, playerOneScore, playerTwoScore);
 	paintPlayAreaInRect(playerOne, playerTwo, ball, &windowArea);
 
-	BitBlt(dcManager.front_hdc, 0, 0, width, height, dcManager.back_hdc, 0, 0, SRCCOPY);
+	if(primary)
+		BitBlt(dcManager.front_hdc, 0, 0, width, height, dcManager.back_hdc, 0, 0, SRCCOPY);
 }
 
 

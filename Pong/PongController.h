@@ -3,6 +3,8 @@
 #include "PongView.h"
 #include "PongAI.h"
 #include "Scene.h"
+#include "SceneManager.h"
+#include "PauseMenu.h"
 
 class PongController: public Scene
 {
@@ -12,10 +14,11 @@ private:
 	PongView * view;
 	PongAI * ai;
 
-
+	SceneManager * sceneManager;
+	PauseMenu * pauseScreen;
 
 public:
-	PongController(void);
+	PongController(SceneManager * manager);
 	~PongController(void);
 
 	//keeping these public for the ai class, use keyPressed / Released functions below
@@ -28,7 +31,7 @@ public:
 
 	//Scene function overrides
 	void update(int deltaTime);
-	void paint();
+	void paint(bool primary);
 	void keyPressed(char key);
 	void specialKeyPressed(std::string key);
 	void keyReleased(char key);

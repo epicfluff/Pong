@@ -40,7 +40,12 @@ void SceneManager::paint()
 		else
 		{
 			if(sceneStack.size() > index && index >= 0)
-				sceneStack[index]->paint();
+			{
+				if(index == sceneStack.size() - 1)
+					sceneStack[index]->paint(true);
+				else
+					sceneStack[index]->paint(false);
+			}
 			index++;
 			rollUp = true;
 		}
